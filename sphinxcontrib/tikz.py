@@ -101,7 +101,7 @@ def system(command, builder, outfile=None):
     stdout, stderr = process.communicate()
     if process.returncode != 0:
         builder._tikz_warned = True
-        raise TikzExtError('Error (tikz extension): %s exited with error:'
+        raise Exception('Error (tikz extension): %s exited with error:'
                            '\n[stderr]\n%s\n[stdout]\n%s'
                            % (binary, stderr, stdout))
     if outfile is not None:
